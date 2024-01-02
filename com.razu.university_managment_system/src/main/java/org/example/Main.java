@@ -3,16 +3,13 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
     @Override
     public String toString() {
         return "Main{}";
     }
-
     public static void main(String[] args) {
         List<Student> returnStudentList = new ArrayList<>();
         List<Teacher> returnTeacherList = new ArrayList<>();
@@ -24,102 +21,146 @@ public class Main {
         returnDepartmentList = departmentFactory();
         returnCourseList = courseFactory();
 
-//        for(Student i: returnStudentList){
-//            System.out.println(i);
-//        }
-//        for(Teacher i : returnTeacherList){
-//            System.out.println(i);
-//        }
-//        returnDepartmentList.forEach(element -> System.out.println(element));
-//        for(Course i : returnCourseList){
-//            System.out.println(i);
-//        }
         buildUniversity(returnDepartmentList,returnStudentList,returnTeacherList,returnCourseList);
-
-
-
-//        University university = new University("UIU");
-//        System.out.println(university);
-//        addStudentInCourse();
-
     }
     public static void buildUniversity(List<Department> departmentList,List<Student> studentList, List<Teacher> teacherList, List<Course> courseList){
         University uiu = new University("United International University");
         uiu.setDepartmentList(departmentList);
         int numberOfCourse=0;
-        System.out.println(uiu);
 
-
-        //List<Department> department = departmentList;
-        System.out.println(departmentList);
-        for(Department i : departmentList){
-            if(Objects.equals(i.getName(),"EEE")){
-                System.out.println(courseList.get(0));
-                i.addCourse(courseList.get(0));
-                i.addCourse(courseList.get(1));
+        for(Student student : studentList){
+            if(Objects.equals(student.getName(),"Rahim Ahamed")) {
+                student.addCourse(courseList.get(0));
+                student.addCourse(courseList.get(1));
             }
-
-            else if(Objects.equals(i.getName(),"CSE")) {
-                i.addCourse(courseList.get(3));
+            if(Objects.equals(student.getName(),"karim Khan")) {
+                student.addCourse(courseList.get(0));
+                student.addCourse(courseList.get(1));
             }
-            else if(Objects.equals(i.getName(),"BBA")){
-                i.addCourse(courseList.get(4));
-                i.addCourse(courseList.get(5));
+            if(Objects.equals(student.getName(),"Newton Rahman")) {
+                student.addCourse(courseList.get(1));
             }
-            //System.out.println(courseList);
+            if(Objects.equals(student.getName(),"Galilio Bishawas")) {
+                student.addCourse(courseList.get(0));
+            }
+            if(Objects.equals(student.getName(),"Raihan Mollah")) {
+                student.addCourse(courseList.get(2));
+            }
+            if(Objects.equals(student.getName(),"Harun Mollah")) {
+                student.addCourse(courseList.get(2));
+            }
+            if(Objects.equals(student.getName(),"Niem Choudhury")) {
+                student.addCourse(courseList.get(2));
+            }
+            if(Objects.equals(student.getName(),"Saimun Rahman")) {
+                student.addCourse(courseList.get(3));
+                student.addCourse(courseList.get(4));
+            }
+            if(Objects.equals(student.getName(),"Deve Khan")) {
+                student.addCourse(courseList.get(3));
+            }
+            if(Objects.equals(student.getName(),"Evan Rahman")) {
+                student.addCourse(courseList.get(3));
+                student.addCourse(courseList.get(4));
+            }
         }
 
-        System.out.println(departmentList);
+        for(Course course :courseList){
+            if(Objects.equals(course.getName(),"Mathematics")){
+                course.addStudent(studentList.get(0));
+                course.addStudent(studentList.get(1));
+                course.addStudent(studentList.get(3));
+                course.setTeacher(teacherList.get(0));
+            }
+            if(Objects.equals(course.getName(),"Electronics 1")){
+                course.addStudent(studentList.get(0));
+                course.addStudent(studentList.get(1));
+                course.addStudent(studentList.get(2));
+                course.setTeacher(teacherList.get(1));
+            }
+            if(Objects.equals(course.getName(),"Structural programming language")){
+                course.addStudent(studentList.get(4));
+                course.addStudent(studentList.get(5));
+                course.addStudent(studentList.get(6));
+                course.setTeacher(teacherList.get(2));
+            }
+            if(Objects.equals(course.getName(),"English 1")){
+                course.addStudent(studentList.get(7));
+                course.addStudent(studentList.get(8));
+                course.addStudent(studentList.get(9));
+                course.setTeacher(teacherList.get(3));
+            }
+            if(Objects.equals(course.getName(),"Accounting")){
+                course.addStudent(studentList.get(7));
+                course.addStudent(studentList.get(9));
+                course.setTeacher(teacherList.get(4));
+            }
+        }
 
-//            for (Course j : course){
-//                for(Course l : courseList){
-//                    numberOfCourse ++ ;
-//                    if(numberOfCourse<2){
-//                        j.setName(l);
-//                    }
-//                }
-//            }
+        for(Teacher teacher : teacherList) {
+            if (Objects.equals(teacher.getName(), "Salimullah")) {
+                teacher.addStudent(studentList.get(0));
+                teacher.addStudent(studentList.get(1));
+                teacher.addStudent(studentList.get(2));
+            }
+            if (Objects.equals(teacher.getName(), "Manik Munshi")) {
+                teacher.addStudent(studentList.get(0));
+                teacher.addStudent(studentList.get(1));
+                teacher.addStudent(studentList.get(3));
+            }
+            if (Objects.equals(teacher.getName(), "Salauddin Ahamed")) {
+                teacher.addStudent(studentList.get(3));
+                teacher.addStudent(studentList.get(4));
+                teacher.addStudent(studentList.get(5));
+            }
+            if (Objects.equals(teacher.getName(), "Iqbal bahar choudhury")) {
+                teacher.addStudent(studentList.get(7));
+                teacher.addStudent(studentList.get(8));
+                teacher.addStudent(studentList.get(9));
+            }
+            if (Objects.equals(teacher.getName(), "Dider Khan")) {
+                teacher.addStudent(studentList.get(7));
+                teacher.addStudent(studentList.get(9));
+                teacher.addStudent(studentList.get(4));
+            }
+        }
 
-//        for(Course i:courseList){
-//            numberOfCourse ++ ;
-//            if(numberOfCourse<2){
-//            }
-//        }
+        for(Department department : departmentList){
+            if(Objects.equals(department.getName(),"Electrical and Electronic Engineering")){
+                department.addCourse(courseList.get(0));
+                department.addCourse(courseList.get(1));
 
+                department.addStudent(studentList.get(0));
+                department.addStudent(studentList.get(1));
+                department.addStudent(studentList.get(2));
+                department.addStudent(studentList.get(3));
+
+                department.addTeacher(teacherList.get(0));
+                department.addTeacher(teacherList.get(1));
+            }
+
+            else if(Objects.equals(department.getName(),"Computer science")) {
+                department.addCourse(courseList.get(2));
+
+                department.addStudent(studentList.get(4));
+                department.addStudent(studentList.get(5));
+                department.addStudent(studentList.get(6));
+
+                department.addTeacher(teacherList.get(2));
+                department.addTeacher(teacherList.get(3));
+
+            }
+            else if(Objects.equals(department.getName(),"Business Administration")){
+                department.addCourse(courseList.get(3));
+                department.addCourse(courseList.get(4));
+
+                department.addStudent(studentList.get(7));
+                department.addStudent(studentList.get(8));
+                department.addStudent(studentList.get(9));
+                department.addTeacher(teacherList.get(4));
+            }
+        }
     }
-//    public static void  addStudentInCourse() {
-//        University uiu = new University();
-//        uiu.setName("UIU");
-//
-//        Department eee = new Department();
-//        eee.setName("EEE");
-//        if (!uiu.getDepartmentList().contains(eee)) {
-//            uiu.addDepartment(eee);
-//        }
-//
-//        Department cse = new Department();
-//        cse.setName("CSE");
-//        if (!uiu.getDepartmentList().contains(cse)) {
-//            uiu.addDepartment(cse);
-//        }
-//
-//        Department bba = new Department();
-//        bba.setName("BBA");
-//        if (!uiu.getDepartmentList().contains(bba)) {
-//            uiu.addDepartment(bba);
-//        }
-//
-//        System.out.println(uiu);
-//
-//        Teacher salimullah = new Teacher("Salimullah");
-//        Teacher manik = new Teacher("Manik Munshi");
-//        Teacher salauddin = new Teacher("Salauddin Ahamed") ;
-//        Course programing = new
-//        if (!cse.getTeacherList().contains(salimullah) && bba.getTeacherList().contains(salimullah) && !eee.getStudentList().contains(salimullah)) {
-//            eee.addTeacher(salimullah);
-//        }
-//        System.out.println(salimullah);
-//    }
     public static List<Student> studentFactory(){
 
         List<Student> studentList = new ArrayList<>();
@@ -152,6 +193,7 @@ public class Main {
 
         Student evan = new Student("Evan Rahman");
         studentList.add(evan);
+
         return studentList;
     }
     public static List<Teacher> teacherFactory(){
@@ -166,11 +208,12 @@ public class Main {
         Teacher salauddin = new Teacher("Salauddin Ahamed");
         teacherList.add(salauddin);
 
-        Teacher ibc = new Teacher("Iqban bahar choudhury");
+        Teacher ibc = new Teacher("Iqbal bahar choudhury");
         teacherList.add(ibc);
 
         Teacher dider = new Teacher("Dider Khan");
         teacherList.add(dider);
+
         return teacherList;
     }
     public static List<Course> courseFactory(){

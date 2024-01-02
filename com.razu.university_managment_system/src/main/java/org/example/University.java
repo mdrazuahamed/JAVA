@@ -1,9 +1,10 @@
 package org.example;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class University {
+public class University implements Serializable {
     private String name;
 
     private List<Department> departmentList = new ArrayList<>();
