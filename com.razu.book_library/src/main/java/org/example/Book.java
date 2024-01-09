@@ -6,16 +6,19 @@ public abstract class Book {
     private Author author;
     private int price;
     private String genre;
+    protected int protec;
+
+    public int getProtec() {
+        return protec;
+    }
+
+    public void setProtec(int protec) {
+        this.protec = protec;
+    }
+
     public Book(){
 
     }
-
-//    public BookExtd(String name, String country, AuthorExtd author, int price) {
-//        this.name = name;
-//        this.country = country;
-//        this.author = author;
-//        this.price = price;
-//    }
 
     public Book(String name, String country, Author author, int price, String genre) {
         this.name = name;

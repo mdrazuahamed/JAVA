@@ -2,12 +2,9 @@ package org.example;
 
 public class ComicBook extends Book {
     private int discount=10;
+
     public ComicBook() {
     }
-
-//    public ComicBookExtd(String name, String country, AuthorExtd author, int price) {
-//        super(name, country, author, price);
-//    }
 
     public ComicBook(String name, String country, Author author, int price, String genre) {
         super(name, country, author, price, genre);
@@ -18,9 +15,9 @@ public class ComicBook extends Book {
     }
 
     public int getDiscount() {
-        System.out.println("In Comic class");
         return discount;
     }
+
     public String getAuthorNameExtd(){
         return super.getAuthorName();
     }

@@ -7,10 +7,6 @@ public class ActionBook extends Book {
         this.discount = discount;
     }
 
-//    public ActionBookExtd(String name, String country, AuthorExtd author, int price) {
-//        super(name, country, author, price);
-//    }
-
     public ActionBook(String name, String country, Author author, int price, String genre) {
         super(name, country, author, price, genre);
     }
@@ -25,9 +21,8 @@ public class ActionBook extends Book {
     public String getAuthorNameExtd(){
         return super.getAuthorName();
     }
-    public int getDiscount() {
 
-        System.out.println("In Action book class");
+    public int getDiscount() {
         return discount;
     }
 
