@@ -1,15 +1,19 @@
 package org.example;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.*;
+import java.util.List;
 
-public class Teacher {
+public class Teacher implements Serializable {
     private String name;
     private University university;
     private Department department;
     private Course course;
-    private List<String> studentList = new ArrayList<>();
+    private List<Student> studentList = new ArrayList<>();
 
+    public void addStudent( Student student){
+        studentList.add(student);
+    }
     public String getName() {
         return name;
     }
@@ -42,11 +46,11 @@ public class Teacher {
         this.course = course;
     }
 
-    public List<String> getStudentList() {
+    public List<Student> getStudentList() {
         return studentList;
     }
 
-    public void setStudentList(List<String> studentList) {
+    public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
     }
 
